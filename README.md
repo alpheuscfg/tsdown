@@ -69,9 +69,11 @@ const iifeOptions: UserConfig = {
     entry: {
         init: "./src/init.ts",
     },
-    noExternal: [
-        /** ... */
-    ],
+    deps: {
+        alwaysBundle: [
+            /** ... */
+        ],
+    },
 };
 
 export default defineConfig([

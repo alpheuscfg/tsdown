@@ -1,3 +1,9 @@
+## Next
+
+### Breaking Changes
+
+- set minimum supported tsdown version to 0.21.0
+
 ## 0.1.2 (2026-01-25)
 
 ### What's Changed

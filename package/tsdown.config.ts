@@ -25,7 +25,6 @@ const options: UserConfig = {
 };
 
 export default defineConfig([
-    // @ts-expect-error
     {
         ...options,
         format: "esm",
@@ -33,7 +32,6 @@ export default defineConfig([
             js: ".mjs",
         }),
     },
-    // @ts-expect-error
     {
         ...options,
         format: "cjs",
@@ -41,7 +39,6 @@ export default defineConfig([
             js: ".js",
         }),
     },
-    // @ts-expect-error
     {
         ...options,
         dts: {
