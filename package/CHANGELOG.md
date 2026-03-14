@@ -1,3 +1,9 @@
+## 0.3.0
+
+### Breaking Changes
+
+- set `unbundle` to `false` by default
+
 ## 0.2.0 (2026-03-05)
 
 ### Breaking Changes

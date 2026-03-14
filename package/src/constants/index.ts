@@ -12,7 +12,7 @@ const OPTIONS_DEFAULT = {
     sourcemap: true,
     minify: false,
     shims: true,
-    unbundle: true,
+    unbundle: false,
     hash: false,
     inputOptions: {
         experimental: {
