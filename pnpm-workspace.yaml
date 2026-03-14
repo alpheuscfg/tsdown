@@ -12,7 +12,7 @@ catalogs:
         # Supported versions
         "tsdown": ~0.21.0
     test:
-        "vitest": ^4
+        "vitest": ^4.1
 
 minimumReleaseAge: 1440
 
