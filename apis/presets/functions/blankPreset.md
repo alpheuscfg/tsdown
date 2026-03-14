@@ -6,7 +6,7 @@
 function blankPreset(options?): Preset;
 ```
 
-Defined in: [presets/blank.ts:10](https://github.com/alpheusday/tsdown/blob/836a3bd0b140561314f002d2a7d17740f7babaa2/package/src/presets/blank.ts#L10)
+Defined in: [presets/blank.ts:10](https://github.com/alpheusday/tsdown/blob/c16cc51cd8420341ab6358e8c8cf4db7866559be/package/src/presets/blank.ts#L10)
 
 Blank preset.
 

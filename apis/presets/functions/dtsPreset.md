@@ -6,7 +6,7 @@
 function dtsPreset(options?): Preset;
 ```
 
-Defined in: [presets/dts.ts:38](https://github.com/alpheusday/tsdown/blob/836a3bd0b140561314f002d2a7d17740f7babaa2/package/src/presets/dts.ts#L38)
+Defined in: [presets/dts.ts:38](https://github.com/alpheusday/tsdown/blob/c16cc51cd8420341ab6358e8c8cf4db7866559be/package/src/presets/dts.ts#L38)
 
 DTS preset.
 
