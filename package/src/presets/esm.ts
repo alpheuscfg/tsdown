@@ -79,5 +79,5 @@ const esmPreset = (options?: PresetOptionsESM): Preset => {
     };
 };
 
-export type { PresetOptionsESM, ExtraOptionsESM };
+export type { ExtraOptionsESM, PresetOptionsESM };
 export { esmPreset };

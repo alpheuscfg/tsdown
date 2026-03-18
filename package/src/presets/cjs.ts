@@ -79,5 +79,5 @@ const cjsPreset = (options?: PresetOptionsCJS): Preset => {
     };
 };
 
-export type { PresetOptionsCJS, ExtraOptionsCJS };
+export type { ExtraOptionsCJS, PresetOptionsCJS };
 export { cjsPreset };

@@ -25,4 +25,4 @@ type PresetResult = {
  */
 type Preset = (options: PresetOptions) => PresetResult;
 
-export type { PresetOptions, PresetResult, Preset };
+export type { Preset, PresetOptions, PresetResult };
