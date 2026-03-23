@@ -3,7 +3,6 @@ import type { UserConfig } from "tsdown";
 import type { Preset, PresetResult } from "#/@types/preset";
 
 import { toMerged } from "es-toolkit";
-import { defineConfig as _defineConfig } from "tsdown";
 
 import { OPTIONS_DEFAULT } from "#/constants";
 
@@ -36,10 +35,11 @@ const defineConfigFn = (
 ): UserConfig[] => {
     const opts: UserConfig = toMerged(OPTIONS_DEFAULT, options ?? {});
 
-    if (!presets)
-        return _defineConfig([
+    if (!presets) {
+        return [
             opts,
-        ]);
+        ];
+    }
 
     const presetResults: PresetResult[] = [];
 
@@ -51,7 +51,7 @@ const defineConfigFn = (
         presetResults.push(presetResult);
     }
 
-    return _defineConfig(processPresetResults(presetResults));
+    return processPresetResults(presetResults);
 };
 
 /**
