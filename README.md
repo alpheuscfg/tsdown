@@ -1,4 +1,4 @@
-# Alpheus tsdown Configuration
+# tsdown Configuration
 
 A shareable tsdown configuration.
 
@@ -27,8 +27,8 @@ Implement the preset into `tsdown.config.ts`:
 ```ts
 import { defineConfig } from "@apst/tsdown";
 import { 
-    esmPreset,
     cjsPreset,
+    esmPreset,
     dtsPreset,
 } from "@apst/tsdown/presets";
 
@@ -39,8 +39,8 @@ export default defineConfig(
         },
     },
     [
-        esmPreset(),
         cjsPreset(),
+        esmPreset(),
         dtsPreset(),
     ],
 );
@@ -53,19 +53,19 @@ import type { UserConfig } from "tsdown";
 
 import { defineConfig } from "@apst/tsdown";
 import { 
-    esmPreset,
     cjsPreset,
+    esmPreset,
     dtsPreset,
     iifePreset,
 } from "@apst/tsdown/presets";
 
-const options: UserConfig = {
+const config: UserConfig = {
     entry: {
         index: "./src/index.ts",
     },
 };
 
-const iifeOptions: UserConfig = {
+const iifeConfig: UserConfig = {
     entry: {
         init: "./src/init.ts",
     },
@@ -77,10 +77,10 @@ const iifeOptions: UserConfig = {
 };
 
 export default defineConfig([
-    esmPreset(options),
-    cjsPreset(options),
-    dtsPreset(options),
-    iifePreset(iifeOptions),
+    esmPreset(config),
+    cjsPreset(config),
+    dtsPreset(config),
+    iifePreset(iifeConfig),
 ]);
 ```
 
