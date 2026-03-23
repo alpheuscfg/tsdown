@@ -1,12 +1,14 @@
 set shell := ["bash", "-cu"]
 set windows-shell := ["pwsh", "-Command"]
 
-node_bin := "node_modules/.bin/"
-biome := node_bin + "biome"
-tsc := node_bin + "tsc"
-tsdown := node_bin + "tsdown"
-vitest := node_bin + "vitest"
-typedoc := node_bin + "typedoc"
+tsc := "pnpm exec tsc"
+biome := "pnpm exec biome"
+tsdown := "pnpm exec tsdown"
+vitest := "pnpm exec vitest"
+typedoc := "pnpm exec typedoc"
+
+publish_dev := "pnpm publish --no-git-checks --tag dev --access public"
+publish := "pnpm publish --access public"
 
 pkg := "package"
 
@@ -21,63 +23,69 @@ example_iife := "examples/iife"
 
 # Default action
 _:
-    just lint
-    just fmt
-    just build
-    just test
+    just --list -u
 
 # Install
 i:
     pnpm install
 
-# Lint with TypeScript Compiler
+# Format code
+fmt:
+    {{biome}} check --write .
+
+# Lint code with ls-lint
+ls-lint:
+    ls-lint -config ./.ls-lint.yaml
+
+# Lint code with ls-lint
+lslint:
+    just ls-lint
+
+# Lint code with typos-cli
+typos:
+    typos
+
+# Lint code with TypeScript Compiler
 tsc:
-    cd ./package && ../{{tsc}} --noEmit
+    cd ./{{pkg}} && {{tsc}} --noEmit
 
 # Lint code
 lint:
-    ls-lint -config .ls-lint.yaml
-    typos
+    just lslint
+    just typos
     just tsc
 
 # Lint code with Biome
 lint-biome:
-    ./{{biome}} lint .
-
-# Format code
-fmt:
-    ./{{biome}} check --write .
+    {{biome}} lint .
 
 # Build package
 build:
-    cd ./{{pkg}} && ../{{tsdown}} -c tsdown.config.ts
+    cd ./{{pkg}} && {{tsdown}} -c tsdown.config.ts
 
 # Run tests
 test:
-    cd ./{{test_cjs}} && ./{{vitest}} run
-    cd ./{{test_esm}} && ./{{vitest}} run
-    cd ./{{test_dts}} && ./{{vitest}} run
-    cd ./{{test_iife}} && ./{{vitest}} run
+    cd ./{{test_cjs}} && {{vitest}} run
+    cd ./{{test_esm}} && {{vitest}} run
+    cd ./{{test_dts}} && {{vitest}} run
+    cd ./{{test_iife}} && {{vitest}} run
 
-# Run tests with different runtimes
-test-all:
-    cd ./{{test_cjs}} && pnpm run test
-    cd ./{{test_cjs}} && bun run test
+# Check code
+check:
+    just fmt
+    just lint
+    just build
+    just test
 
-    cd ./{{test_esm}} && pnpm run test
-    cd ./{{test_esm}} && bun run test
-    cd ./{{test_dts}} && pnpm run test
-    cd ./{{test_dts}} && bun run test
-
-    cd ./{{test_iife}} && pnpm run test
-    cd ./{{test_iife}} && bun run test
-
+# Build CommonJS example
 example-cjs:
     cd ./{{example_cjs}} && ./{{tsdown}} -c tsdown.config.ts
 
+# Build ESModule example
 example-esm:
     cd ./{{example_esm}} && ./{{tsdown}} -c tsdown.config.ts
 
+# Build IIFE example
 example-iife:
     cd ./{{example_iife}} && ./{{tsdown}} -c tsdown.config.ts
 
@@ -87,26 +95,56 @@ api:
 
 # Publish package with dev tag as dry-run
 publish-dev-try:
-    cd ./{{pkg}} && pnpm publish --no-git-checks --tag dev --dry-run
+    cd ./{{pkg}} && {{publish_dev}} --dry-run
 
 # Publish package with dev tag
 publish-dev:
-    cd ./{{pkg}} && pnpm publish --no-git-checks --tag dev
+    cd ./{{pkg}} && {{publish_dev}}
 
 # Publish package as dry-run
 publish-try:
-    cd ./{{pkg}} && pnpm publish --dry-run
+    cd ./{{pkg}} && {{publish}} --dry-run
 
 # Publish package
 publish:
-    cd ./{{pkg}} && pnpm publish
+    cd ./{{pkg}} && {{publish}}
+
+# Clean builds (Linux)
+clean-linux:
+    rm -rf ./{{pkg}}/dist
+
+# Clean builds (macOS)
+clean-macos:
+    just clean-linux
+
+# Clean builds (Windows)
+clean-windows:
+    Remove-Item -Recurse -Force ./{{pkg}}/dist
 
 # Clean builds
 clean:
-    rm -rf ./{{pkg}}/dist
+    just clean-{{os()}}
+
+# Clean everything (Linux)
+clean-all-linux:
+    just clean
+
+    rm -rf ./{{pkg}}/node_modules
+
+    rm -rf ./node_modules
+
+# Clean everything (macOS)
+clean-all-macos:
+    just clean-all-linux
+
+# Clean everything (Windows)
+clean-all-windows:
+    just clean
+
+    Remove-Item -Recurse -Force ./{{pkg}}/node_modules
+
+    Remove-Item -Recurse -Force ./node_modules
 
 # Clean everything
 clean-all:
-    rm -rf ./node_modules
-    rm -rf ./{{pkg}}/node_modules
-    just clean
+    just clean-all-{{os()}}
