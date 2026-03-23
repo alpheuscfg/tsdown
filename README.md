@@ -77,8 +77,8 @@ const iifeConfig: UserConfig = {
 };
 
 export default defineConfig([
-    esmPreset(config),
     cjsPreset(config),
+    esmPreset(config),
     dtsPreset(config),
     iifePreset(iifeConfig),
 ]);
