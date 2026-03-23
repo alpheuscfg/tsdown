@@ -25,9 +25,9 @@ type CompleteExtraOptionsESM = {
 type ExtraOptionsESM = Partial<CompleteExtraOptionsESM>;
 
 /**
- * Options for the ESModule preset.
+ * Config for the ESModule preset.
  */
-type PresetOptionsESM = UserConfig & {
+type PresetConfigESM = UserConfig & {
     /**
      * Preset-specific options.
      */
@@ -37,13 +37,13 @@ type PresetOptionsESM = UserConfig & {
 /**
  * ESModule preset.
  *
- * This preset includes the default ESModule options.
+ * This preset includes the default ESModule config.
  */
-const esmPreset = (options?: PresetOptionsESM): Preset => {
-    const { presetOptions, ...optionsRest } = options ?? {};
+const esmPreset = (config?: PresetConfigESM): Preset => {
+    const { presetOptions, ...configRest } = config ?? {};
 
-    return ({ options: internalOptions }): PresetResult => {
-        const optsBase: UserConfig = toMerged(internalOptions, {
+    return ({ config: internalConfig }): PresetResult => {
+        const cfgBase: UserConfig = toMerged(internalConfig, {
             outExtensions: ({
                 pkgType,
             }: OutExtensionContext): OutExtensionObject => {
@@ -68,16 +68,16 @@ const esmPreset = (options?: PresetOptionsESM): Preset => {
             },
         } satisfies UserConfig);
 
-        const opts: UserConfig = toMerged(optsBase, optionsRest ?? {});
+        const cfg: UserConfig = toMerged(cfgBase, configRest ?? {});
 
         return {
-            options: {
-                ...opts,
+            config: {
+                ...cfg,
                 format: "esm",
             },
         };
     };
 };
 
-export type { ExtraOptionsESM, PresetOptionsESM };
+export type { ExtraOptionsESM, PresetConfigESM };
 export { esmPreset };

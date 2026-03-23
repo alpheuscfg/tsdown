@@ -11,18 +11,18 @@ const processPresetResults = (presetResults: PresetResult[]): UserConfig[] => {
 
     for (const presetResult of presetResults) {
         // undefined
-        if (!presetResult.options) continue;
+        if (!presetResult.config) continue;
 
         // array
-        if (Array.isArray(presetResult.options)) {
-            for (const opts of presetResult.options) {
+        if (Array.isArray(presetResult.config)) {
+            for (const opts of presetResult.config) {
                 result.push(opts);
             }
         }
 
         // object
         else {
-            result.push(presetResult.options);
+            result.push(presetResult.config);
         }
     }
 
@@ -30,14 +30,14 @@ const processPresetResults = (presetResults: PresetResult[]): UserConfig[] => {
 };
 
 const defineConfigFn = (
-    options?: UserConfig,
+    userConfig?: UserConfig,
     presets?: Preset[],
 ): UserConfig[] => {
-    const opts: UserConfig = toMerged(OPTIONS_DEFAULT, options ?? {});
+    const config: UserConfig = toMerged(OPTIONS_DEFAULT, userConfig ?? {});
 
     if (!presets) {
         return [
-            opts,
+            config,
         ];
     }
 
@@ -45,7 +45,7 @@ const defineConfigFn = (
 
     for (const preset of presets) {
         const presetResult: PresetResult = preset({
-            options: opts,
+            config,
         });
 
         presetResults.push(presetResult);
@@ -115,22 +115,22 @@ function defineConfig(presets?: Preset[]): UserConfig[];
  * );
  * ```
  */
-function defineConfig(options?: UserConfig, presets?: Preset[]): UserConfig[];
+function defineConfig(config?: UserConfig, presets?: Preset[]): UserConfig[];
 
 function defineConfig(
-    presetsOrOptions?: Preset[] | UserConfig,
+    presetsOrConfig?: Preset[] | UserConfig,
     optionalPresets?: Preset[],
 ): UserConfig[] {
     try {
-        const options: UserConfig | undefined = Array.isArray(presetsOrOptions)
+        const config: UserConfig | undefined = Array.isArray(presetsOrConfig)
             ? void 0
-            : presetsOrOptions;
+            : presetsOrConfig;
 
-        const presets: Preset[] | undefined = Array.isArray(presetsOrOptions)
-            ? presetsOrOptions
+        const presets: Preset[] | undefined = Array.isArray(presetsOrConfig)
+            ? presetsOrConfig
             : optionalPresets;
 
-        return defineConfigFn(options, presets);
+        return defineConfigFn(config, presets);
     } catch (err: unknown) {
         console.error(err);
         throw err;

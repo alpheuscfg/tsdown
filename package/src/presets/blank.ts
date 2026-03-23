@@ -7,10 +7,10 @@ import type { Preset, PresetResult } from "#/@types/preset";
  *
  * This preset does not include any default options.
  */
-const blankPreset = (options?: UserConfig): Preset => {
+const blankPreset = (config?: UserConfig): Preset => {
     return (): PresetResult => {
         return {
-            options,
+            config,
         };
     };
 };

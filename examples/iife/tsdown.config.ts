@@ -8,19 +8,19 @@ import {
     iifePreset,
 } from "@apst/tsdown/presets";
 
-const options: UserConfig = {
+const config: UserConfig = {
     entry: {
         index: "./src/index.ts",
     },
 };
 
-const iifeDevOptions: UserConfig = {
+const iifeDevConfig: UserConfig = {
     entry: {
         init: "./src/init.ts",
     },
 };
 
-const iifePrdOptions: UserConfig = {
+const iifePrdConfig: UserConfig = {
     entry: {
         "init.min": "./src/init.ts",
     },
@@ -28,9 +28,9 @@ const iifePrdOptions: UserConfig = {
 };
 
 export default defineConfig([
-    esmPreset(options),
-    cjsPreset(options),
-    dtsPreset(options),
-    iifePreset(iifeDevOptions),
-    iifePreset(iifePrdOptions),
+    esmPreset(config),
+    cjsPreset(config),
+    dtsPreset(config),
+    iifePreset(iifeDevConfig),
+    iifePreset(iifePrdConfig),
 ]);

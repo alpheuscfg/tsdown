@@ -1,4 +1,4 @@
-import type { OutExtensionObject, UserConfig } from "../node_modules/tsdown";
+import type { OutExtensionObject, UserConfig } from "tsdown";
 
 import { defineConfig } from "tsdown";
 

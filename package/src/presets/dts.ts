@@ -21,9 +21,9 @@ type CompleteExtraOptionsDTS = {
 type ExtraOptionsDTS = Partial<CompleteExtraOptionsDTS>;
 
 /**
- * Options for the DTS preset.
+ * Config for the DTS preset.
  */
-type PresetOptionsDTS = UserConfig & {
+type PresetConfigDTS = UserConfig & {
     /**
      * Preset-specific options.
      */
@@ -35,10 +35,10 @@ type PresetOptionsDTS = UserConfig & {
  *
  * This preset includes the default DTS options.
  */
-const dtsPreset = (options?: PresetOptionsDTS): Preset => {
-    const { presetOptions, ...optionsRest } = options ?? {};
+const dtsPreset = (config?: PresetConfigDTS): Preset => {
+    const { presetOptions, ...configRest } = config ?? {};
 
-    return ({ options: internalOptions }): PresetResult => {
+    return ({ config: internalConfig }): PresetResult => {
         const optsPreset: UserConfig = {
             dts: {
                 emitDtsOnly: true,
@@ -59,15 +59,15 @@ const dtsPreset = (options?: PresetOptionsDTS): Preset => {
             },
         };
 
-        const optsBase: UserConfig = toMerged(internalOptions, optsPreset);
+        const optsBase: UserConfig = toMerged(internalConfig, optsPreset);
 
-        const opts: UserConfig = toMerged(optsBase, optionsRest ?? {});
+        const cfg: UserConfig = toMerged(optsBase, configRest ?? {});
 
         return {
-            options: opts,
+            config: cfg,
         };
     };
 };
 
-export type { ExtraOptionsDTS, PresetOptionsDTS };
+export type { ExtraOptionsDTS, PresetConfigDTS };
 export { dtsPreset };

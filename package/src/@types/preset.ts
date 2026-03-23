@@ -3,11 +3,11 @@ import type { UserConfig } from "tsdown";
 /**
  * Preset options.
  */
-type PresetOptions = {
+type PresetContext = {
     /**
-     * Options.
+     * tsdown configuration.
      */
-    options: UserConfig;
+    config: UserConfig;
 };
 
 /**
@@ -15,14 +15,14 @@ type PresetOptions = {
  */
 type PresetResult = {
     /**
-     * Options.
+     * tsdown configuration.
      */
-    options?: UserConfig | UserConfig[];
+    config?: UserConfig | UserConfig[];
 };
 
 /**
- * Preset for the build.
+ * Preset for the tsdown configuration.
  */
-type Preset = (options: PresetOptions) => PresetResult;
+type Preset = (context: PresetContext) => PresetResult;
 
-export type { Preset, PresetOptions, PresetResult };
+export type { Preset, PresetContext, PresetResult };

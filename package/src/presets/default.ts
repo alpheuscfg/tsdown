@@ -9,12 +9,12 @@ import { toMerged } from "es-toolkit";
  *
  * This preset includes the default options only.
  */
-const defaultPreset = (options?: UserConfig): Preset => {
-    return ({ options: internalOptions }): PresetResult => {
-        const opts: UserConfig = toMerged(internalOptions, options ?? {});
+const defaultPreset = (config?: UserConfig): Preset => {
+    return ({ config: internalConfig }): PresetResult => {
+        const cfg: UserConfig = toMerged(internalConfig, config ?? {});
 
         return {
-            options: opts,
+            config: cfg,
         };
     };
 };

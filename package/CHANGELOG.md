@@ -1,3 +1,9 @@
+## Next
+
+### Breaking Changes
+
+- rename in types and parameters
+
 ## 0.3.1 (2026-03-18)
 
 ### What's Changed

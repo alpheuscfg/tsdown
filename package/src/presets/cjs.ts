@@ -25,9 +25,9 @@ type CompleteExtraOptionsCJS = {
 type ExtraOptionsCJS = Partial<CompleteExtraOptionsCJS>;
 
 /**
- * Options for the CommonJS preset.
+ * Config for the CommonJS preset.
  */
-type PresetOptionsCJS = UserConfig & {
+type PresetConfigCJS = UserConfig & {
     /**
      * Preset-specific options.
      */
@@ -39,11 +39,11 @@ type PresetOptionsCJS = UserConfig & {
  *
  * This preset includes the default CommonJS options.
  */
-const cjsPreset = (options?: PresetOptionsCJS): Preset => {
-    const { presetOptions, ...optionsRest } = options ?? {};
+const cjsPreset = (config?: PresetConfigCJS): Preset => {
+    const { presetOptions, ...cfgRest } = config ?? {};
 
-    return ({ options: internalOptions }): PresetResult => {
-        const optsBase: UserConfig = toMerged(internalOptions, {
+    return ({ config: internalConfig }): PresetResult => {
+        const cfgBase: UserConfig = toMerged(internalConfig, {
             outExtensions: ({
                 pkgType,
             }: OutExtensionContext): OutExtensionObject => {
@@ -68,16 +68,16 @@ const cjsPreset = (options?: PresetOptionsCJS): Preset => {
             },
         } satisfies UserConfig);
 
-        const opts: UserConfig = toMerged(optsBase, optionsRest ?? {});
+        const cfg: UserConfig = toMerged(cfgBase, cfgRest ?? {});
 
         return {
-            options: {
-                ...opts,
+            config: {
+                ...cfg,
                 format: "cjs",
             },
         };
     };
 };
 
-export type { ExtraOptionsCJS, PresetOptionsCJS };
+export type { ExtraOptionsCJS, PresetConfigCJS };
 export { cjsPreset };

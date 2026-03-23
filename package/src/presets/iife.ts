@@ -5,36 +5,36 @@ import type { Preset, PresetResult } from "#/@types/preset";
 import { toMerged } from "es-toolkit";
 
 /**
- * Options for the IIFE preset.
+ * Config for the IIFE preset.
  */
-type PresetOptionsIIFE = UserConfig;
+type PresetConfigIIFE = UserConfig;
 
 /**
  * IIFE preset.
  *
- * This preset includes the default IIFE options.
+ * This preset includes the default IIFE config.
  */
-const iifePreset = (options?: PresetOptionsIIFE): Preset => {
-    return ({ options: internalOptions }): PresetResult => {
-        const optsPreset: UserConfig = {
+const iifePreset = (config?: PresetConfigIIFE): Preset => {
+    return ({ config: internalConfig }): PresetResult => {
+        const cfgPreset: UserConfig = {
             unbundle: false,
             outputOptions: {
                 entryFileNames: ({ name }) => `${name}.js`,
             },
         };
 
-        const optsBase: UserConfig = toMerged(internalOptions, optsPreset);
+        const cfgBase: UserConfig = toMerged(internalConfig, cfgPreset);
 
-        const opts: UserConfig = toMerged(optsBase, options ?? {});
+        const cfg: UserConfig = toMerged(cfgBase, config ?? {});
 
         return {
-            options: {
-                ...opts,
+            config: {
+                ...cfg,
                 format: "iife",
             },
         };
     };
 };
 
-export type { PresetOptionsIIFE };
+export type { PresetConfigIIFE };
 export { iifePreset };
