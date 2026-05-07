@@ -61,7 +61,7 @@ lint-biome:
 
 # Build package
 build:
-    cd ./{{pkg}} && {{tsdown}} -c tsdown.config.ts
+    cd ./{{pkg}} && ../node_modules/.bin/tsdown -c tsdown.config.ts
 
 # Run tests
 test:

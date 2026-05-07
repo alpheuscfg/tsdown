@@ -4,6 +4,10 @@
 
 - rename in types and parameters
 
+### What's Changed
+
+- add support for tsdown 0.22.0
+
 ## 0.3.1 (2026-03-18)
 
 ### What's Changed
