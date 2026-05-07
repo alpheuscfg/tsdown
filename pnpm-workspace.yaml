@@ -3,6 +3,9 @@ packages:
     - ./tests/*
     - ./examples/*
 
+allowBuilds:
+    esbuild: false
+
 catalogs:
     dev:
         "@types/node": ^25
