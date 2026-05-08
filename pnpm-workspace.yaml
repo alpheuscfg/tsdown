@@ -3,6 +3,9 @@ packages:
     - ./tests/*
     - ./examples/*
 
+autoInstallPeers: false
+strictPeerDependencies: false
+
 allowBuilds:
     esbuild: false
 
