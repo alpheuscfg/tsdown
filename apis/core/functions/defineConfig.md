@@ -8,7 +8,7 @@
 function defineConfig(presets?): UserConfig[];
 ```
 
-Defined in: [functions/define.ts:93](https://github.com/alpheusday/tsdown/blob/c16cc51cd8420341ab6358e8c8cf4db7866559be/package/src/functions/define.ts#L93)
+Defined in: [functions/define.ts:93](https://github.com/alpheuscfg/tsdown/blob/d5e92a7e0e98e900a23336bdc59290a94fd02901/package/src/functions/define.ts#L93)
 
 Define tsdown configuration.
 
@@ -58,10 +58,10 @@ export default defineConfig([
 ## Call Signature
 
 ```ts
-function defineConfig(options?, presets?): UserConfig[];
+function defineConfig(config?, presets?): UserConfig[];
 ```
 
-Defined in: [functions/define.ts:118](https://github.com/alpheusday/tsdown/blob/c16cc51cd8420341ab6358e8c8cf4db7866559be/package/src/functions/define.ts#L118)
+Defined in: [functions/define.ts:118](https://github.com/alpheuscfg/tsdown/blob/d5e92a7e0e98e900a23336bdc59290a94fd02901/package/src/functions/define.ts#L118)
 
 Define tsdown configuration.
 
@@ -87,7 +87,7 @@ export default defineConfig(
 
 ### Parameters
 
-#### options?
+#### config?
 
 `UserConfig`
 

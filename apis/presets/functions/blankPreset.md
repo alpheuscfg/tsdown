@@ -3,10 +3,10 @@
 # Function: blankPreset()
 
 ```ts
-function blankPreset(options?): Preset;
+function blankPreset(config?): Preset;
 ```
 
-Defined in: [presets/blank.ts:10](https://github.com/alpheusday/tsdown/blob/c16cc51cd8420341ab6358e8c8cf4db7866559be/package/src/presets/blank.ts#L10)
+Defined in: [presets/blank.ts:10](https://github.com/alpheuscfg/tsdown/blob/d5e92a7e0e98e900a23336bdc59290a94fd02901/package/src/presets/blank.ts#L10)
 
 Blank preset.
 
@@ -14,7 +14,7 @@ This preset does not include any default options.
 
 ## Parameters
 
-### options?
+### config?
 
 `UserConfig`
 

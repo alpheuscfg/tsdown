@@ -91,7 +91,7 @@ example-iife:
 
 # Generate APIs documentation
 api:
-    cd ./{{pkg}} && ../{{typedoc}}
+    cd ./{{pkg}} && {{typedoc}}
 
 # Publish package with dev tag as dry-run
 publish-dev-try:

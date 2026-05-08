@@ -1,20 +1,20 @@
 [@apst/tsdown](../../README.md) / [presets](../README.md) / Preset
 
-# Type Alias: Preset()
+# Type Alias: Preset
 
 ```ts
-type Preset = (options) => PresetResult;
+type Preset = (context) => PresetResult;
 ```
 
-Defined in: [@types/preset.ts:26](https://github.com/alpheusday/tsdown/blob/c16cc51cd8420341ab6358e8c8cf4db7866559be/package/src/@types/preset.ts#L26)
+Defined in: [@types/preset.ts:26](https://github.com/alpheuscfg/tsdown/blob/d5e92a7e0e98e900a23336bdc59290a94fd02901/package/src/@types/preset.ts#L26)
 
-Preset for the build.
+Preset for the tsdown configuration.
 
 ## Parameters
 
-### options
+### context
 
-[`PresetOptions`](PresetOptions.md)
+[`PresetContext`](PresetContext.md)
 
 ## Returns
 

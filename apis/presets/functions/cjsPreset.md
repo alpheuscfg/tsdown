@@ -3,10 +3,10 @@
 # Function: cjsPreset()
 
 ```ts
-function cjsPreset(options?): Preset;
+function cjsPreset(config?): Preset;
 ```
 
-Defined in: [presets/cjs.ts:42](https://github.com/alpheusday/tsdown/blob/c16cc51cd8420341ab6358e8c8cf4db7866559be/package/src/presets/cjs.ts#L42)
+Defined in: [presets/cjs.ts:42](https://github.com/alpheuscfg/tsdown/blob/d5e92a7e0e98e900a23336bdc59290a94fd02901/package/src/presets/cjs.ts#L42)
 
 CommonJS preset.
 
@@ -14,9 +14,9 @@ This preset includes the default CommonJS options.
 
 ## Parameters
 
-### options?
+### config?
 
-[`PresetOptionsCJS`](../type-aliases/PresetOptionsCJS.md)
+[`PresetConfigCJS`](../type-aliases/PresetConfigCJS.md)
 
 ## Returns
 

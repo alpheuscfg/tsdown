@@ -3,18 +3,18 @@
 # Function: iifePreset()
 
 ```ts
-function iifePreset(options?): Preset;
+function iifePreset(config?): Preset;
 ```
 
-Defined in: [presets/iife.ts:17](https://github.com/alpheusday/tsdown/blob/c16cc51cd8420341ab6358e8c8cf4db7866559be/package/src/presets/iife.ts#L17)
+Defined in: [presets/iife.ts:17](https://github.com/alpheuscfg/tsdown/blob/d5e92a7e0e98e900a23336bdc59290a94fd02901/package/src/presets/iife.ts#L17)
 
 IIFE preset.
 
-This preset includes the default IIFE options.
+This preset includes the default IIFE config.
 
 ## Parameters
 
-### options?
+### config?
 
 `UserConfig`
 

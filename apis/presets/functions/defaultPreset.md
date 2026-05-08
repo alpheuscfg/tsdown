@@ -3,10 +3,10 @@
 # Function: defaultPreset()
 
 ```ts
-function defaultPreset(options?): Preset;
+function defaultPreset(config?): Preset;
 ```
 
-Defined in: [presets/default.ts:12](https://github.com/alpheusday/tsdown/blob/c16cc51cd8420341ab6358e8c8cf4db7866559be/package/src/presets/default.ts#L12)
+Defined in: [presets/default.ts:12](https://github.com/alpheuscfg/tsdown/blob/d5e92a7e0e98e900a23336bdc59290a94fd02901/package/src/presets/default.ts#L12)
 
 Default preset.
 
@@ -14,7 +14,7 @@ This preset includes the default options only.
 
 ## Parameters
 
-### options?
+### config?
 
 `UserConfig`
 

@@ -6,18 +6,18 @@
 type PresetResult = object;
 ```
 
-Defined in: [@types/preset.ts:16](https://github.com/alpheusday/tsdown/blob/c16cc51cd8420341ab6358e8c8cf4db7866559be/package/src/@types/preset.ts#L16)
+Defined in: [@types/preset.ts:16](https://github.com/alpheuscfg/tsdown/blob/d5e92a7e0e98e900a23336bdc59290a94fd02901/package/src/@types/preset.ts#L16)
 
 Preset result.
 
 ## Properties
 
-### options?
+### config?
 
 ```ts
-optional options: UserConfig | UserConfig[];
+optional config?: UserConfig | UserConfig[];
 ```
 
-Defined in: [@types/preset.ts:20](https://github.com/alpheusday/tsdown/blob/c16cc51cd8420341ab6358e8c8cf4db7866559be/package/src/@types/preset.ts#L20)
+Defined in: [@types/preset.ts:20](https://github.com/alpheuscfg/tsdown/blob/d5e92a7e0e98e900a23336bdc59290a94fd02901/package/src/@types/preset.ts#L20)
 
-Options.
+tsdown configuration.

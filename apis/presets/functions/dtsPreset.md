@@ -3,10 +3,10 @@
 # Function: dtsPreset()
 
 ```ts
-function dtsPreset(options?): Preset;
+function dtsPreset(config?): Preset;
 ```
 
-Defined in: [presets/dts.ts:38](https://github.com/alpheusday/tsdown/blob/c16cc51cd8420341ab6358e8c8cf4db7866559be/package/src/presets/dts.ts#L38)
+Defined in: [presets/dts.ts:38](https://github.com/alpheuscfg/tsdown/blob/d5e92a7e0e98e900a23336bdc59290a94fd02901/package/src/presets/dts.ts#L38)
 
 DTS preset.
 
@@ -14,9 +14,9 @@ This preset includes the default DTS options.
 
 ## Parameters
 
-### options?
+### config?
 
-[`PresetOptionsDTS`](../type-aliases/PresetOptionsDTS.md)
+[`PresetConfigDTS`](../type-aliases/PresetConfigDTS.md)
 
 ## Returns
 
