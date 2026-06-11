@@ -5,7 +5,6 @@ tsc := "pnpm exec tsc"
 biome := "pnpm exec biome"
 tsdown := "pnpm exec tsdown"
 vitest := "pnpm exec vitest"
-typedoc := "pnpm exec typedoc"
 
 publish_dev := "pnpm publish --no-git-checks --tag dev --access public"
 publish := "pnpm publish --access public"
@@ -88,10 +87,6 @@ example-esm:
 # Build IIFE example
 example-iife:
     cd ./{{example_iife}} && ./{{tsdown}} -c tsdown.config.ts
-
-# Generate APIs documentation
-api:
-    cd ./{{pkg}} && {{typedoc}}
 
 # Publish package with dev tag as dry-run
 publish-dev-try:
