@@ -23,9 +23,9 @@ catalogs:
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
-    - "@apst/biome"
-    - "@apst/tsconfig"
+    - "@apst/*"
     - "@rolldown/*"
     - "rolldown"
     - "rolldown-plugin-dts"
+    - "@tsdown/*"
     - "tsdown"
