@@ -1,3 +1,9 @@
+## Next
+
+### Breaking Changes
+
+- set `shims` to `false` by default
+
 ## 0.4.0 (2026-05-08)
 
 ### Breaking Changes

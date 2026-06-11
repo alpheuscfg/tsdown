@@ -11,7 +11,7 @@ const OPTIONS_DEFAULT = {
     treeshake: true,
     sourcemap: true,
     minify: false,
-    shims: true,
+    shims: false,
     unbundle: false,
     hash: false,
     inputOptions: {
