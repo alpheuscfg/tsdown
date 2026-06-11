@@ -1,8 +1,3 @@
-/**
- * Presets module
- * @module presets
- */
-
 export type {
     Preset,
     PresetContext,
