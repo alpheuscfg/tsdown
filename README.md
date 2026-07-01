@@ -4,20 +4,20 @@ A shareable tsdown configuration.
 
 ## Installation
 
-Install this package as a dependency in the project:
+Install these packages as a dev dependencies in the project:
 
 ```sh
 # npm
-npm i @apst/tsdown
+npm i -D tsdown @apst/tsdown
 
 # Yarn
-yarn add @apst/tsdown
+yarn add -D tsdown @apst/tsdown
 
 # pnpm
-pnpm add @apst/tsdown
+pnpm add -D tsdown @apst/tsdown
 
 # Bun
-bun add @apst/tsdown
+bun add -D tsdown @apst/tsdown
 ```
 
 ## Usage
