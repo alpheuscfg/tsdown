@@ -15,7 +15,7 @@ catalogs:
   peer:
     tsdown:
       specifier: ~0.21.0 || ~0.22.0
-      version: 0.22.5
+      version: 0.22.7
   test:
     vitest:
       specifier: ^4.1
@@ -38,8 +38,8 @@ importers:
         specifier: catalog:dev
         version: 25.0.2
       tsdown:
-        specifier: ~0.22.5
-        version: 0.22.5(typescript@6.0.3)(unrun@0.2.39)
+        specifier: ~0.22.7
+        version: 0.22.7(typescript@6.0.3)(unrun@0.2.39)
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -51,7 +51,7 @@ importers:
         version: link:../../package
       tsdown:
         specifier: catalog:peer
-        version: 0.22.5(typescript@6.0.3)(unrun@0.2.39)
+        version: 0.22.7(typescript@6.0.3)(unrun@0.2.39)
 
   examples/esm:
     dependencies:
@@ -60,7 +60,7 @@ importers:
         version: link:../../package
       tsdown:
         specifier: catalog:peer
-        version: 0.22.5(typescript@6.0.3)(unrun@0.2.39)
+        version: 0.22.7(typescript@6.0.3)(unrun@0.2.39)
 
   examples/iife:
     dependencies:
@@ -69,7 +69,7 @@ importers:
         version: link:../../package
       tsdown:
         specifier: catalog:peer
-        version: 0.22.5(typescript@6.0.3)(unrun@0.2.39)
+        version: 0.22.7(typescript@6.0.3)(unrun@0.2.39)
 
   package:
     dependencies:
@@ -91,7 +91,7 @@ importers:
         version: 25.0.2
       tsdown:
         specifier: catalog:peer
-        version: 0.22.5(typescript@6.0.3)(unrun@0.2.39)
+        version: 0.22.7(typescript@6.0.3)(unrun@0.2.39)
       vitest:
         specifier: catalog:test
         version: 4.1.0(@types/node@25.0.2)
@@ -106,7 +106,7 @@ importers:
         version: 25.0.2
       tsdown:
         specifier: catalog:peer
-        version: 0.22.5(typescript@6.0.3)(unrun@0.2.39)
+        version: 0.22.7(typescript@6.0.3)(unrun@0.2.39)
       vitest:
         specifier: catalog:test
         version: 4.1.0(@types/node@25.0.2)
@@ -121,7 +121,7 @@ importers:
         version: 25.0.2
       tsdown:
         specifier: catalog:peer
-        version: 0.22.5(typescript@6.0.3)(unrun@0.2.39)
+        version: 0.22.7(typescript@6.0.3)(unrun@0.2.39)
       vitest:
         specifier: catalog:test
         version: 4.1.0(@types/node@25.0.2)
@@ -136,7 +136,7 @@ importers:
         version: 25.0.2
       tsdown:
         specifier: catalog:peer
-        version: 0.22.5(typescript@6.0.3)(unrun@0.2.39)
+        version: 0.22.7(typescript@6.0.3)(unrun@0.2.39)
       vitest:
         specifier: catalog:test
         version: 4.1.0(@types/node@25.0.2)
@@ -1338,14 +1338,14 @@ packages:
       unplugin-unused:
         optional: true
 
-  tsdown@0.22.5:
-    resolution: {integrity: sha512-0iEpnuOVBGo7mPW+FlyglErHBExYOAlpLBlCl/QcTrRUJ+TF2prfzl6ipQS5VsjJejFXnmbkdh0Ta53B3stWxg==}
+  tsdown@0.22.7:
+    resolution: {integrity: sha512-4egbOzc9dxVv/QS+gDV75FIxDIjQQeOnXBlUuikyjmn0ozuc6FW11djJjEEo3vqkuJRygpnKHurnj+Iwftk4VA==}
     engines: {node: ^22.18.0 || >=24.11.0}
     hasBin: true
     peerDependencies:
       '@arethetypeswrong/core': ^0.18.1
-      '@tsdown/css': 0.22.5
-      '@tsdown/exe': 0.22.5
+      '@tsdown/css': 0.22.7
+      '@tsdown/exe': 0.22.7
       '@vitejs/devtools': '*'
       publint: ^0.3.8
       tsx: '*'
@@ -2373,7 +2373,7 @@ snapshots:
       - synckit
       - vue-tsc
 
-  tsdown@0.22.5(typescript@6.0.3)(unrun@0.2.39):
+  tsdown@0.22.7(typescript@6.0.3)(unrun@0.2.39):
     dependencies:
       ansis: 4.3.1
       cac: 7.0.0
